@@ -6,7 +6,9 @@ import lombok.Data;
 import javax.persistence.*;
 
 @Entity
+
 @Data
+@Table(name = "tbl_product")
 public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

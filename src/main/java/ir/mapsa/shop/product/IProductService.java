@@ -1,6 +1,7 @@
 package ir.mapsa.shop.product;
 
 import ir.mapsa.shop.category.Category;
+import org.springframework.data.domain.Page;
 
 import java.util.List;
 
@@ -12,4 +13,6 @@ public interface IProductService {
     void  delete(Long id);
     Product getById(Long id);
     List<Product> getAll();
+
+
 }

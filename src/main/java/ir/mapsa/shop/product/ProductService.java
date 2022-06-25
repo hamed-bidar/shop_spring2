@@ -4,6 +4,9 @@ import ir.mapsa.shop.category.Category;
 import ir.mapsa.shop.category.ICategoryService;
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -49,4 +52,6 @@ public class ProductService implements IProductService{
     public List<Product> getAll() {
         return (List<Product>) repository.findAll();
     }
+
+
 }

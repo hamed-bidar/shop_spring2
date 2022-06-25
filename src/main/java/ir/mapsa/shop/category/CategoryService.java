@@ -1,16 +1,17 @@
 package ir.mapsa.shop.category;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
-
 @Service
 @AllArgsConstructor
-@Data
-public class CategoryService implements ICategoryService{
+
+public class CategoryService implements ICategoryService {
     private final CategoryRepository repository;
 
     @Override
@@ -39,4 +40,13 @@ public class CategoryService implements ICategoryService{
     public List<Category> getAll() {
         return (List<Category>) repository.findAll();
     }
+
+    @Override
+    public Page<Category> getAllPages(int page, int size) {
+
+        Pageable firstPage = PageRequest.of(page, size);
+
+        return repository.findAll(firstPage);
+    }
+
 }
